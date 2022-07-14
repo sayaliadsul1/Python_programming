@@ -1,0 +1,533 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[45 65 98 87 32 55 90 33]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "ar1  = np.array([45,65,98,87,32,55,90,33])\n",
+    "print(ar1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "12\n",
+      "98\n",
+      "67\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "ar1 = np.array([12,23,34,45,56,67,78,98])\n",
+    "print(ar1[0])\n",
+    "print(ar1[-1])\n",
+    "print(ar1[-3])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[45 65 98 87]\n",
+      "[45 65 98 87]\n",
+      "[12 23 34 45]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "ar1  = np.array([45,65,98,87,32,55,90,33])\n",
+    "ar2 = np.array([12,23,34,45,56,67,78,98])\n",
+    "print(ar1[0:-4])\n",
+    "print(ar1[0:4])\n",
+    "print(ar2[0:4])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[201 320 450]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "ar1 = np.array([100,101,201,320,450,456,234,789])\n",
+    "print(ar1[-6:-3])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(ar1[5:4])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[450]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(ar1[4:5])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "31\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "ar1 = np.array([10,11,20,32,45,46,24,78])\n",
+    "at = ar1[1]+ar1[2]\n",
+    "print(at)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "77\n"
+     ]
+    }
+   ],
+   "source": [
+    "ar1 = np.array([10,11,20,32,45,46,24,78])\n",
+    "ar2 = np.array([12,23,34,45,56,67,78,98])\n",
+    "at = ar1[3]+ar2[3]\n",
+    "print(at)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "101\n"
+     ]
+    }
+   ],
+   "source": [
+    "at1 = ar1[4]+ar2[4]\n",
+    "print(at1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Concatenation"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "array dimension:: 1\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "array([ 1,  2,  3,  4, 12, 23, 34, 45, 56, 67, 78, 98])"
+      ]
+     },
+     "execution_count": 10,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "ar1 = np.array([1,2,3,4])\n",
+    "ar2 = np.array([12,23,34,45,56,67,78,98])\n",
+    "\n",
+    "at = np.concatenate((ar1,ar2))\n",
+    "print(\"array dimension::\",at.ndim)\n",
+    "at"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Original array 1::\n",
+      "[[23 34 56 78]\n",
+      " [98 45 67 34]]\n",
+      "-----------------------\n",
+      "Original array 2::\n",
+      "[[32 43 65 87]\n",
+      " [89 54 76 43]]\n",
+      "------------------------\n",
+      "Array 1st dimension is:: 2 Array 2nd dimension is::  2\n",
+      "***************************************************************\n",
+      "2 dimensional two array after concatenate\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "array([[23, 34, 56, 78],\n",
+       "       [98, 45, 67, 34],\n",
+       "       [32, 43, 65, 87],\n",
+       "       [89, 54, 76, 43]])"
+      ]
+     },
+     "execution_count": 11,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "ar1 = np.array([[23,34,56,78],[98,45,67,34]])\n",
+    "ar2 = np.array([[32,43,65,87],[89,54,76,43]])\n",
+    "print(\"Original array 1::\")\n",
+    "print(ar1)\n",
+    "print(\"-----------------------\")\n",
+    "print(\"Original array 2::\")\n",
+    "print(ar2)\n",
+    "print(\"------------------------\")\n",
+    "print(\"Array 1st dimension is::\",ar1.ndim,\"Array 2nd dimension is:: \",ar2.ndim)\n",
+    "print(\"***************************************************************\")\n",
+    "print(\"2 dimensional two array after concatenate\")\n",
+    "at1 = np.concatenate((ar1,ar2))\n",
+    "at1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1st array Dimensions: 1\n",
+      "2nd array Dimensions: 1\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "array([ 2,  4,  5,  6,  6,  7,  8,  9,  9,  8,  7,  6, 10, 11, 12, 13])"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "ar1=np.array([2,4,5,6,6,7,8,9])\n",
+    "ar2=np.array([9,8,7,6,10,11,12,13])\n",
+    "print(\"1st array Dimensions:\",ar1.ndim)\n",
+    "print(\"2nd array Dimensions:\",ar2.ndim)\n",
+    "\n",
+    "atp=np.concatenate((ar1,ar2))\n",
+    "atp"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 22  23  24]\n",
+      " [ 25  62  72]\n",
+      " [222 223 242]\n",
+      " [225 622 722]]\n",
+      "****************************************\n",
+      "Dimension of 1st array is: 2\n",
+      "Dimension of 2nd array is: 2\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "ar2=np.array([[22,23,24],[25,62,72]])\n",
+    "ar3=np.array([[222,223,242],[225,622,722]])\n",
+    "at=np.concatenate((ar2,ar3))\n",
+    "print(at)\n",
+    "print(\"****************************************\")\n",
+    "print(\"Dimension of 1st array is:\",ar2.ndim)\n",
+    "print(\"Dimension of 2nd array is:\",ar3.ndim)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Axis = 1 (converts row into column) by default axis size is 0"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Original array:\n",
+      "--------------------------------------\n",
+      "[[ 22  23  24]\n",
+      " [ 25  62  72]\n",
+      " [222 223 242]\n",
+      " [225 622 722]\n",
+      " [ 32  22  24]\n",
+      " [  2  62  72]]\n",
+      "**************************************\n",
+      "Convert row into column using axis=1\n",
+      "--------------------------------------\n",
+      "[[ 22  23  24 222 223 242  32  22  24]\n",
+      " [ 25  62  72 225 622 722   2  62  72]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "ar2=np.array([[22,23,24],[25,62,72]])\n",
+    "ar3=np.array([[222,223,242],[225,622,722]])\n",
+    "ar4=np.array([[32,22,24],[2,62,72]])\n",
+    "\n",
+    "at1=np.concatenate((ar2,ar3,ar4)) \n",
+    "print(\"Original array:\")\n",
+    "print(\"--------------------------------------\")\n",
+    "print(at1)\n",
+    "print(\"**************************************\")\n",
+    "\n",
+    "print(\"Convert row into column using axis=1\")\n",
+    "print(\"--------------------------------------\")\n",
+    "at2=np.concatenate((ar2,ar3,ar4),axis=1)\n",
+    "print(at2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[22 23 24 25 62 72]\n",
+      "----------------------\n",
+      "(6,)\n"
+     ]
+    }
+   ],
+   "source": [
+    "ar2=np.array([22,23,24,25,62,72])        # in 1d array shape function only show columns\n",
+    "print(ar2)\n",
+    "print(\"----------------------\")\n",
+    "print(ar2.shape)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[2 3 4 5]\n",
+      " [6 7 8 9]]\n",
+      "*************\n",
+      "(2, 4)\n",
+      "2 is a no.of rows && 4 is no.of columns\n"
+     ]
+    }
+   ],
+   "source": [
+    "ar1=np.array([[2,3,4,5],[6,7,8,9]])     # in 2d array shape function show 2=rows & 4=columns\n",
+    "print(ar1)\n",
+    "print(\"*************\")\n",
+    "print(ar1.shape)\n",
+    "print(\"2 is a no.of rows && 4 is no.of columns\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Array::\n",
+      "[[24 45 56 78 89]\n",
+      " [23 45 67 89 90]\n",
+      " [12 23 11 65 87]\n",
+      " [78 65 34 21 43]]\n",
+      "-----------------------------\n",
+      "Array shape is:: (4, 5)\n",
+      "4 is a no.of rows && 5 is a no.of columns\n",
+      "------------------------------------------\n",
+      "Array dimension is:: 2\n"
+     ]
+    }
+   ],
+   "source": [
+    "ar1=np.array([[24,45,56,78,89],[23,45,67,89,90],[12,23,11,65,87],[78,65,34,21,43]])\n",
+    "print(\"Array::\")\n",
+    "print(ar1)\n",
+    "print(\"-----------------------------\")\n",
+    "print(\"Array shape is::\",ar1.shape)\n",
+    "print(\"4 is a no.of rows && 5 is a no.of columns\")\n",
+    "print(\"------------------------------------------\")\n",
+    "print(\"Array dimension is::\",ar1.ndim)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[[[11 22 33 44]\n",
+      "   [23 45 67 98]]\n",
+      "\n",
+      "  [[23 45 56 45]\n",
+      "   [33 56 67 98]]]]\n",
+      "---------------------\n",
+      "(1, 2, 2, 4)\n",
+      "---------------------\n",
+      "Array dimension is: 4\n"
+     ]
+    }
+   ],
+   "source": [
+    "ar1=np.array([[[[11,22,33,44,],[23,45,67,98]],[[23,45,56,45],[33,56,67,98]]]])\n",
+    "print(ar1)\n",
+    "print(\"---------------------\")\n",
+    "print(ar1.shape)\n",
+    "print(\"---------------------\")\n",
+    "print(\"Array dimension is:\",ar1.ndim)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
