@@ -1,0 +1,75 @@
+select * from TB_Info;
+
+select Name,Pincode from TB_Info;
+
+select * from TB_Info where City='Pune';
+
+select Name,Profession from TB_Info where City='Pune';
+
+select Name,Profession,Amount from TB_Info where Amount<5000;
+
+select * from TB_Info where City='Pune' AND Profession='CEO';
+
+select * from TB_Info where City='Pune' OR Profession='CEO';
+
+select DISTINCT Profession from TB_Info;
+
+select DISTINCT Profession,Name from TB_Info;
+
+select count(DISTINCT Profession) from TB_Info;
+
+select  count(Profession) from TB_Info;
+
+select  count(Name) from TB_Info;
+
+select  count(Name) from TB_Info;
+
+select  Avg(Amount) from TB_Info;
+
+select  min(Amount) from TB_Info;
+
+select  max(Amount) from TB_Info;
+
+select  min(Amount) from TB_Info;
+
+update TB_Info set Name='Steve' where Amount='8000';
+
+update TB_Info set Name='Matrics',Profession='MD' where Amount='3000';
+
+delete from TB_Info where Amount='2000';
+
+delete from TB_Info;
+
+drop table TB_Info;
+
+select sum(Amount)AS Total from TB_Info;
+
+select * from TB_Info order by city; 
+
+select * from TB_Info order by city DESC; 
+
+select * from TB_Info order by city DESC,Profession ASC; 
+
+select * from TB_Info where ID between 2 AND 5;
+
+select count(Amount) AS Counts,City from TB_Info group by city;
+
+select count(Name) AS Counts,City,Name from TB_Info group by city,Name;
+
+select sum(Amount) AS SUMS,Amount from TB_Info group by Amount;
+
+Order by 
+Group by
+Pivot Table Pandas
+Select,Update,Delete,drop,create [Database,Table]
+Where condition
+Between
+
+
+
+
+
+
+
+
+
